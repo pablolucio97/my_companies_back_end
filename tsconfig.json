@@ -10,6 +10,24 @@
     "emitDecoratorMetadata": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "paths": {
+      "@modules/*": [
+        "modules/*"
+      ],
+      "@shared/*": [
+        "shared/*"
+      ],
+      "@types/*": [
+        "@types/*"
+      ],
+      "@errors/*": [
+        "errors/*"
+      ],
+      "@config/*": [
+        "config/*"
+      ],
+    }
   }
 }

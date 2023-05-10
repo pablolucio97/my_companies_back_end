@@ -5,19 +5,21 @@
   "license": "MIT",
   "scripts": {
     "typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli",
-    "dev": "ts-node-dev --ignore-watch node_modules --transpile-only --respawn src/shared/infra/http/server.ts"
+    "dev": "ts-node-dev  -r tsconfig-paths/register --ignore-watch node_modules --transpile-only --respawn src/shared/infra/http/server.ts"
   },
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "pg": "8.8.0",
     "reflect-metadata": "^0.1.13",
+    "tsyringe": "^4.7.0",
     "typeorm": "0.2.45",
     "typescript": "^5.0.4"
   },
   "devDependencies": {
     "@types/cors": "^2.8.13",
     "@types/express": "^4.17.17",
+    "@types/uuid": "^9.0.1",
     "ts-node-dev": "^2.0.0",
     "tsconfig-paths": "^4.2.0"
   }
