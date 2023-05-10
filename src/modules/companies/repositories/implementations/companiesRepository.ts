@@ -24,6 +24,12 @@ export class CompaniesRepository implements ICompanyRepository {
         const company = await this.repository.findOne({ cnpj })
         return company
     }
+
+    async findById(id: string): Promise<ICompany> {
+        const company = await this.repository.findOne({ id })
+        return company
+    }
+
     async updateCompany({ id, nome, cnpj, website }: IUpdateCompanyDTO): Promise<void> {
         await this.repository.update(id, {
             nome,

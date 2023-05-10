@@ -25,6 +25,7 @@ interface ICompanyRepository {
     listCompanies(): Promise<ICompany[]>
     createCompany(company: ICreateCompanyDTO): Promise<void>
     findByCNPJ(cnpj: string): Promise<ICompany>
+    findById(id: string): Promise<ICompany>
     updateCompany(company: IUpdateCompanyDTO): Promise<void>
     deleteCompany(id: string): Promise<void>
 }
