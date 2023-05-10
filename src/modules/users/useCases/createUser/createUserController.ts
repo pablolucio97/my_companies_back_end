@@ -11,6 +11,6 @@ export class CreateUserController {
             email,
             senha
         })
-        return res.status(201).json({ message: "User created with success!" })
+        return res.status(201).json({ message: "Usuário criado com sucesso!" })
     }
 }

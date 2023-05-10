@@ -7,6 +7,6 @@ export class DeleteUserController {
         const { id } = req.params
         const deleteUserUseCase = container.resolve(DeleteUserUseCase)
         await deleteUserUseCase.execute(id)
-        return res.status(200).json({ message: 'User deleted with success!' })
+        return res.status(200).json({ message: 'Usuário deletado com sucesso!' })
     }
 }
