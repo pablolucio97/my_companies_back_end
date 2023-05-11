@@ -13,11 +13,8 @@ interface ICreateCompanyDTO {
     cnpj: string
 }
 
-interface IUpdateCompanyDTO {
+interface IUpdateCompanyDTO extends ICreateCompanyDTO{
     id: string;
-    nome: string
-    website: string
-    cnpj: string
 }
 
 
