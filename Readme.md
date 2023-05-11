@@ -16,9 +16,9 @@ Este repositório foi criado para armezenar o código back-end do desafio da Hub
 
 ### Usuários
 
-[x] Cadastro de novo usuário.
-[x] Listagem de usuários cadastrados.
-[x] Autenticação de usuário.
+- [x] Cadastro de novo usuário.
+- [x] Listagem de usuários cadastrados.
+- [x] Autenticação de usuário.
 
 ### Empresas
 
