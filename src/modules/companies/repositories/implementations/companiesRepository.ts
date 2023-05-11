@@ -12,8 +12,13 @@ export class CompaniesRepository implements ICompanyRepository {
     public constructor() {
         this.repository = getRepository(Company)
     }
-    async listCompanies(): Promise<ICompany[]> {
-        const companies = await this.repository.find()
+    async listCompanies(id: string): Promise<ICompany[]> {
+        const companies = await this.repository.find({
+            where: {
+                user_id: id
+            },
+            relations: ['user']
+        })
         return companies
     }
     async createCompany(company: ICreateCompanyDTO): Promise<void> {

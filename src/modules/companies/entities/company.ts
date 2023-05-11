@@ -1,4 +1,12 @@
-import { Column, CreateDateColumn, Entity, PrimaryColumn } from 'typeorm'
+import { User } from '@modules/users/entities/user';
+import {
+    Column,
+    CreateDateColumn,
+    Entity,
+    PrimaryColumn,
+    ManyToOne,
+    JoinColumn
+} from 'typeorm'
 import { v4 as uuidv4 } from 'uuid'
 
 @Entity('empresas')
@@ -14,6 +22,13 @@ export class Company {
 
     @Column()
     cnpj: string
+
+    @Column()
+    user_id: string
+
+    @ManyToOne(() => User)
+    @JoinColumn({ name: 'user_id' })
+    user: User
 
     @CreateDateColumn()
     created_at?: Date

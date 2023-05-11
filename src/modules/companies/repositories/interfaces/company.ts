@@ -3,6 +3,7 @@ interface ICompany {
     nome: string
     website: string
     cnpj: string
+    user_id?: string
     created_at?: Date
     updated_at?: Date
 }
@@ -11,6 +12,7 @@ interface ICreateCompanyDTO {
     nome: string
     website: string
     cnpj: string
+    user_id: string
 }
 
 interface IUpdateCompanyDTO extends ICreateCompanyDTO{
@@ -19,7 +21,7 @@ interface IUpdateCompanyDTO extends ICreateCompanyDTO{
 
 
 interface ICompanyRepository {
-    listCompanies(): Promise<ICompany[]>
+    listCompanies(id:string): Promise<ICompany[]>
     createCompany(company: ICreateCompanyDTO): Promise<void>
     findByCNPJ(cnpj: string): Promise<ICompany>
     findById(id: string): Promise<ICompany>
