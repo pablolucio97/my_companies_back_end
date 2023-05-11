@@ -1,3 +1,4 @@
+import { Place } from '@modules/places/entities/place';
 import { User } from '@modules/users/entities/user';
 import {
     Column,
@@ -5,7 +6,8 @@ import {
     Entity,
     PrimaryColumn,
     ManyToOne,
-    JoinColumn
+    JoinColumn,
+    OneToMany
 } from 'typeorm'
 import { v4 as uuidv4 } from 'uuid'
 
@@ -29,6 +31,9 @@ export class Company {
     @ManyToOne(() => User)
     @JoinColumn({ name: 'user_id' })
     user: User
+
+    @OneToMany(() => Place, place => place.company)
+    places: Place[]
 
     @CreateDateColumn()
     created_at?: Date

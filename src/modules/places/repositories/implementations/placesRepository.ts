@@ -12,8 +12,12 @@ export class PlacesRepository implements IPlaceRepository {
     public constructor() {
         this.repository = getRepository(Place)
     }
-    async listPlaces(): Promise<IPlace[]> {
-        const places = await this.repository.find()
+    async listPlaces(id: string): Promise<IPlace[]> {
+        const places = await this.repository.find({
+            where: {
+                company_id: id
+            }
+        })
         return places
     }
     async createPlace(place: ICreatePlaceDTO): Promise<void> {

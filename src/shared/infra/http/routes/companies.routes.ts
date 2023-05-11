@@ -13,7 +13,7 @@ const deleteCompanyController = new DeleteCompanyController()
 const updateCompanyController = new UpdateCompanyController()
 
 companiesRoutes.post('/create', ensureAuthenticate, createCompanyController.handle)
-companiesRoutes.get('/list-by-users/:id', ensureAuthenticate, listCompaniesByUserController.handle)
+companiesRoutes.get('/list-by-user/:id', ensureAuthenticate, listCompaniesByUserController.handle)
 companiesRoutes.delete('/delete/:id', ensureAuthenticate, deleteCompanyController.handle)
 companiesRoutes.put('/update/:id', ensureAuthenticate, updateCompanyController.handle)
 

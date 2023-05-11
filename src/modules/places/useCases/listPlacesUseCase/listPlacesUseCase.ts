@@ -1,3 +1,5 @@
+import { AppError } from '@errors/appError'
+import { ICompanyRepository } from '@modules/companies/repositories/interfaces/company'
 import { IPlaceRepository } from '@modules/places/repositories/interfaces/place'
 import { inject, injectable } from 'tsyringe'
 
@@ -5,11 +7,20 @@ import { inject, injectable } from 'tsyringe'
 export class ListPlacesUseCase {
     constructor(
         @inject('PlacesRepository')
-        private placesRepository: IPlaceRepository
+        private placesRepository: IPlaceRepository,
+        @inject('CompaniesRepository')
+        private companiesRepository: ICompanyRepository
     ) { }
 
-    async execute() {
-        const places = await this.placesRepository.listPlaces()
+    async execute(id: string) {
+
+        const company = await this.companiesRepository.findById(id)
+
+        if (!company) {
+            throw new AppError(404, 'Informe uma empresa válida para listar locais pertencentes.')
+        }
+
+        const places = await this.placesRepository.listPlaces(id)
         return places
     }
 }

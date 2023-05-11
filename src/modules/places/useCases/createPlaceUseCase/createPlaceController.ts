@@ -11,7 +11,8 @@ export class CreatePlaceController {
             numero,
             bairro,
             cidade,
-            estado
+            estado,
+            company_id
         } = req.body
         const createPlaceUseCase = container.resolve(CreatePlaceUseCase)
         await createPlaceUseCase.execute({
@@ -21,7 +22,8 @@ export class CreatePlaceController {
             numero,
             bairro,
             cidade,
-            estado
+            estado,
+            company_id
         })
         return res.status(201).json({ message: "Local cadastrado com sucesso!" })
     }

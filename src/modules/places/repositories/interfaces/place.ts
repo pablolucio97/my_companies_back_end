@@ -7,6 +7,7 @@ interface IPlace {
     bairro: string;
     cidade: string;
     estado: string;
+    company_id?: string;
     created_at?: Date;
     updated_at?: Date;
 }
@@ -19,6 +20,7 @@ interface ICreatePlaceDTO {
     bairro: string;
     cidade: string;
     estado: string;
+    company_id: string;
 }
 
 interface IUpdatePlaceDTO extends ICreatePlaceDTO {
@@ -26,7 +28,7 @@ interface IUpdatePlaceDTO extends ICreatePlaceDTO {
 }
 
 interface IPlaceRepository {
-    listPlaces(): Promise<IPlace[]>
+    listPlaces(id: string): Promise<IPlace[]>
     createPlace(place: ICreatePlaceDTO): Promise<void>
     deletePlace(id: string): Promise<void>
     updatePlace(place: IUpdatePlaceDTO): Promise<void>

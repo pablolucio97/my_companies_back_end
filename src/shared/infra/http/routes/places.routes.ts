@@ -13,7 +13,7 @@ const deletePlaceController = new DeletePlaceController()
 const updatePlaceController = new UpdatePlaceController()
 
 placesRoutes.post('/create', ensureAuthenticate, createPlaceController.handle)
-placesRoutes.get('/list', ensureAuthenticate, listPlacesController.handle)
+placesRoutes.get('/list-by-company/:id', ensureAuthenticate, listPlacesController.handle)
 placesRoutes.delete('/delete/:id', ensureAuthenticate, deletePlaceController.handle)
 placesRoutes.put('/update/:id', ensureAuthenticate, updatePlaceController.handle)
 
