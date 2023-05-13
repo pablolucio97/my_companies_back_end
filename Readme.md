@@ -1,5 +1,7 @@
 # My Companies Back-end
 
+## Descrição
+
 Este repositório foi criado para armezenar o código back-end do desafio da HubLocal para pdevs full-stack.
 
 ## Tecnologias utilizadas
@@ -16,9 +18,9 @@ Este repositório foi criado para armezenar o código back-end do desafio da Hub
 
 ### Usuários
 
-[x] Cadastro de novo usuário.
-[x] Listagem de usuários cadastrados.
-[x] Autenticação de usuário.
+- [x] Cadastro de novo usuário.
+- [x] Listagem de usuários cadastrados.
+- [x] Autenticação de usuário.
 
 ### Empresas
 
@@ -33,6 +35,13 @@ Este repositório foi criado para armezenar o código back-end do desafio da Hub
 - [x] Listagem de locais por empresa.
 - [x] Edição de um local.
 - [x] Remoção de um local.
+
+## Relacionamentos
+
+- [x] Usuários: One To Many com Empresas.
+- [x] Empresa: Many To One com Usuários e One To Many com Locais.
+- [x] Locais: Many To One com Empresas.
+
 
 ## Recursos extras desenvolvidos:
 
@@ -54,15 +63,21 @@ Este repositório foi criado para armezenar o código back-end do desafio da Hub
 2. Tenha o Docker instalado na sua máquina.
 3. Rode o comando docker-compose up para iniciar os containers.
 4. Rode npx yarn typeorm migration:run para rodar todas as migrations.
-5. Abra o Insomnia e importe o arquivo my-companies_insomnia.json que se encontra na raíz do projeto. Esse arquivo contém exemples de todas as requisições de todo o projeto desenvolvido.
+5. Abra o Insomnia e importe o arquivo my-companies_insomnia.json que se encontra na raíz do projeto. Esse arquivo contém exemplos de todas as requisições de todo o projeto desenvolvido. Caso prefira apenas clique no btoão abaixo para iniciar a importação automática para seu Insomnia. 
+
+[![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=My%20Companies%20-%20Pablo%20Silva&uri=https%3A%2F%2Fraw.githubusercontent.com%2Fpablolucio97%2Fmy_companies_back_end%2Fmain%2Fmy-companies_insomnia.json)
+
+6. Configure o ambiente do Insomnia apontando a baseUrl para http://localhost:3335.
 
 ## Contato
 
-Qualquer dúvida ou necessidade de contato [envie-me um emaill](mailto:pablolucio_@hotmail.com) ou [me contate no Whatsapp](https://wa.me/31985187963).
+Qualquer dúvida ou necessidade de contato [envie-me um emaill](mailto:pablolucio_@hotmail.com) ou [me contate no Whatsapp](https://wa.me/31985187963). Obrigado!
 
 
 ## Autor
 [@pablolucio97](https://www.github.com/pablolucio97)
+
+This is a challenge by [Coodesh](https://coodesh.com/)
 
 
 
