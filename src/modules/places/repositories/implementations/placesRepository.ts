@@ -12,11 +12,13 @@ export class PlacesRepository implements IPlaceRepository {
     public constructor() {
         this.repository = getRepository(Place)
     }
-    async listPlaces(id: string): Promise<IPlace[]> {
+    async listPlaces(id: string, itemsPerPage: number, page: number): Promise<IPlace[]> {
         const places = await this.repository.find({
             where: {
                 company_id: id
-            }
+            },
+            take: itemsPerPage,
+            skip: (page - 1) * itemsPerPage
         })
         return places
     }

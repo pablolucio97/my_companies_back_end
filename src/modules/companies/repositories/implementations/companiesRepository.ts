@@ -12,12 +12,14 @@ export class CompaniesRepository implements ICompanyRepository {
     public constructor() {
         this.repository = getRepository(Company)
     }
-    async listCompanies(id: string): Promise<ICompany[]> {
+    async listCompanies(id: string, itemsPerPage: number, page: number): Promise<ICompany[]> {
         const companies = await this.repository.find({
             where: {
                 user_id: id
             },
-            relations: ['user']
+            relations: ['user'],
+            take: itemsPerPage,
+            skip: (page - 1) * itemsPerPage
         })
         return companies
     }

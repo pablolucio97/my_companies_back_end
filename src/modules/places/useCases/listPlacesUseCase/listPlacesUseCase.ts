@@ -12,7 +12,7 @@ export class ListPlacesUseCase {
         private companiesRepository: ICompanyRepository
     ) { }
 
-    async execute(id: string) {
+    async execute(id: string, itemsPerPage: number, page: number ) {
 
         const company = await this.companiesRepository.findById(id)
 
@@ -20,7 +20,7 @@ export class ListPlacesUseCase {
             throw new AppError(404, 'Informe uma empresa válida para listar locais pertencentes.')
         }
 
-        const places = await this.placesRepository.listPlaces(id)
+        const places = await this.placesRepository.listPlaces(id, itemsPerPage, page)
         return places
     }
 }

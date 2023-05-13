@@ -12,7 +12,7 @@ class ListCompaniesByUserUseCase {
         private usersRepository: IUserRepository
     ) { }
 
-    async execute(id: string) {
+    async execute(id: string, itemsPerPage: number, page: number ) {
 
         const user = await this.usersRepository.findById(id)
 
@@ -20,7 +20,7 @@ class ListCompaniesByUserUseCase {
             throw new AppError(404, 'Informe um usuário válido para listar empresas relacionadas.')
         }
 
-        const companies = await this.companiesRepository.listCompanies(id)
+        const companies = await this.companiesRepository.listCompanies(id, itemsPerPage, page)
         return companies
     }
 

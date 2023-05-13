@@ -11,6 +11,7 @@ interface IAuthenticationResponse {
     usuario: {
         nome: string;
         email: string;
+        id: string;
     };
     token: {
         token: string,
@@ -71,8 +72,9 @@ export class AuthenticateUserUseCase {
             usuario: {
                 nome: user.nome,
                 email: user.email,
+                id: user.id
             },
-            token : {
+            token: {
                 token,
                 expira_em: token_expires_days
             }
