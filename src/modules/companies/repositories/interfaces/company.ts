@@ -1,9 +1,12 @@
+import { IPlace } from "@modules/places/repositories/interfaces/place";
+
 interface ICompany {
     id: string;
     nome: string
     website: string
     cnpj: string
     user_id?: string
+    places: IPlace[]
     created_at?: Date
     updated_at?: Date
 }

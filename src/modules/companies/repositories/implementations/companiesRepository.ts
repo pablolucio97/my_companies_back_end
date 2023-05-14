@@ -17,7 +17,7 @@ export class CompaniesRepository implements ICompanyRepository {
             where: {
                 user_id: id
             },
-            relations: ['user'],
+            relations: ['user', 'places'],
             take: itemsPerPage,
             skip: (page - 1) * itemsPerPage
         })

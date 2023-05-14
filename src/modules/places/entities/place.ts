@@ -38,7 +38,7 @@ export class Place {
     @Column()
     company_id: string
 
-    @ManyToOne(() => Company)
+    @ManyToOne(() => Company, company => company.places)
     @JoinColumn({ name: 'company_id' })
     company: Company
 
